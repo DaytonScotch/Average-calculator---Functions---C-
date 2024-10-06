@@ -1,0 +1,61 @@
+//This program gets three exam scores for three students and displays the average for each
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+//Functions declared
+int getTestScore();
+double calAverage(int score1, int score2, int score3, double average);
+void display(string name, double average);
+
+main() {
+
+	string name;
+	int score1, score2, score3;
+	double average;
+
+	int count = 0;
+	while (count < 3) {
+
+		cout << "\nPlease enter the student's name: " << endl;
+		cin >> name;
+		score1 = getTestScore(score);
+		score2 = getTestScore(score);
+		score3 = getTestScore(score);
+		display(name, average);
+		count++;
+	}
+
+	return 0;
+}
+
+//int getTestScore definition
+int getTestScore() {
+
+	int score;
+
+	cout << "Enter a test score: ";
+	cin >> score;
+
+	while (score < 0 || score > 100) {
+
+		cout << "Please enter a valid test score: ";
+		cin >> score;
+	}
+
+	return score;
+}
+
+//double calAverage definition
+double calAverage(int score1, int score2, int score3) {
+
+	double average = (score1 + score2 + score3) / 3;
+	return average; //keep getting 0.00 for average, tried EVERYTHING!!!!
+}
+
+//void display definition
+void display(string name, double average) {
+
+	cout << "The test average for " << name << " is " << setprecision(2) << fixed << average << endl;
+}
